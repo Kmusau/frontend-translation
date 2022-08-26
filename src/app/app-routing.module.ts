@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
+import { SecurityComponent } from './security/security.component';
+import { SentenceComponent } from './sentence/sentence.component';
+import { UsersComponent } from './users/users.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: "authenticate", component: SecurityComponent},
+  {path: "users", component: UsersComponent},
+  {path: "sentence", component: SentenceComponent, canActivate: [AuthGuard]}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

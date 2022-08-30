@@ -29,7 +29,8 @@ export class AudioService {
     formData.append('file', file);
     return fetch(`${this.apiServerUrl}/upload`, {
       method: 'POST',
-      body: formData
+      body: formData,
+      headers: {'Authorization': "Bearer "+ localStorage.getItem('token')}
     });
   };
 

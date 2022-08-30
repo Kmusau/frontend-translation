@@ -15,6 +15,9 @@ import { SentenceService } from './sentence.service';
 import { JwtClientService } from './jwt-client.service';
 import { VoiceComponent } from './voice/voice.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslatedSentenceComponent } from './translated-sentence/translated-sentence.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,14 +25,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SentenceComponent,
     SecurityComponent,
     UsersComponent,
-    VoiceComponent
+    VoiceComponent,
+    TranslatedSentenceComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [ AuthGuard, UsersService, SentenceService, JwtClientService,
     {

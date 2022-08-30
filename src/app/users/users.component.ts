@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Sentence } from '../sentence';
+import { SentenceService } from '../sentence.service';
 import { Users } from '../users';
 import { UsersService } from '../users.service';
 
@@ -12,30 +13,14 @@ import { UsersService } from '../users.service';
 export class UsersComponent implements OnInit {
   closeResult = '';
   public users: Users[] = [];
+  public sentences: Sentence[] = [];
 
-  constructor(private userService: UsersService,
-    private modalService: NgbModal) { }
+  constructor(private userService: UsersService, private sentenceService: SentenceService) { }
 
   ngOnInit() {
     this.getAllUsers();
-  }
+    this.getAllSentences();
 
-  open(content: any) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
   }
 
   /**
@@ -46,6 +31,18 @@ export class UsersComponent implements OnInit {
       (response: Users[]) => {
         this.users = response;
         console.log(this.users);
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+  public getAllSentences() {
+    this.sentenceService.getAllSentences().subscribe(
+      (response: Sentence[]) => {
+        this.sentences = response;
+        console.log(response);
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

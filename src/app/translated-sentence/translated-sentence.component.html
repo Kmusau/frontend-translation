@@ -69,53 +69,22 @@
 
             <!-- Forum List -->
             <div class="inner-main-body p-2 p-sm-3 collapse forum-content show">
-                <div *ngFor="let sentence of sentences" class="card mb-2">
+                <div *ngFor="let translated of translatedSentences" class="card mb-2">
                     <div class="card-body p-2 p-sm-3">
                         <div class="media forum-item">
+                          <h6 class="text-body">{{translated.sentence.sentence_text}}</h6>
+                          <h5>{{translated.language}}</h5>
                             <div class="media-body">
-                                <p class="text-body">
-                                    {{sentence.sentence_text}}
-                                </p>
-                                <ng-template #content let-modal>
-                                  <div class="modal-header">
-                                    <h4 class="modal-title" id="modal-basic-title">Translate sentence</h4>
-                                    <hr>
-                                    <p>{{sentence.sentence_text}}</p>
-                                    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                    <form #translateForm="ngForm" (ngSubmit)="translateSentence(sentence.sentence_id, translateForm)">
-                                      <div class="mb-3">
-                                        <!-- <label for="dateOfBirth">Date of birth</label>
-                                        <div class="input-group">
-                                          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
-                                          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
-                                        </div> -->
-                                        <div class="mb-3">
-                                          <div class="form-group">
-                                            <select name="language" ngModel class="form-select" aria-label="Default select example">
-                                              <!-- <option selected>Select your language here</option> -->
-                                              <option value="Meru">Meru</option>
-                                              <option value="Kikuyu">Kikuyu</option>
-                                              <option value="Kisii">Kisii</option>
-                                            </select>
-                                          </div>
-                                        </div>
 
-                                        <div class="form-group">
-                                          <span class="input-group-text">Write here</span>
-                                          <textarea name="translated_text" ngModel class="form-control" aria-label="With textarea"></textarea>
-                                        </div>
-                                      </div>
-                                      <div class="modal-footer">
-                                        <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-                                      </div>
-                                    </form>
-                                  </div>
-                                </ng-template>
-                                <button class="btn btn-sm btn-outline-primary" (click)="open(content)">Translate sentence</button>
-                                <p class="text-muted">Written by <a href="javascript:void(0)">{{sentence.written_by}}</a> on <span class="text-secondary font-weight-bold">{{sentence.date_modified}}</span></p>
+                                <p class="text-body">
+                                    {{translated.translated_text}}
+                                </p>
+                                <p class="text-muted">Translated by <a href="javascript:void(0)">{{translated.translated_by}}</a> on <span class="text-secondary font-weight-bold">{{translated.date_modified}}</span></p>
                             </div>
+                            <!-- <div class="text-muted small text-center align-self-center">
+                                <span class="d-none d-sm-inline-block"><i class="far fa-eye"></i> 19</span>
+                                <span><i class="far fa-comment ml-2"></i> 3</span>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -225,3 +194,4 @@
     </div>
 </div>
 </div>
+

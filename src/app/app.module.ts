@@ -14,6 +14,7 @@ import { UsersService } from './users.service';
 import { SentenceService } from './sentence.service';
 import { JwtClientService } from './jwt-client.service';
 import { VoiceComponent } from './voice/voice.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { VoiceComponent } from './voice/voice.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [ AuthGuard, UsersService, SentenceService, JwtClientService,
     {

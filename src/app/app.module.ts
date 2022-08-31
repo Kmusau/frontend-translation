@@ -17,6 +17,7 @@ import { VoiceComponent } from './voice/voice.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatedSentenceComponent } from './translated-sentence/translated-sentence.component';
 import { FormsModule } from '@angular/forms';
+import { TopnavComponent } from './topnav/topnav.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     SecurityComponent,
     UsersComponent,
     VoiceComponent,
-    TranslatedSentenceComponent
+    TranslatedSentenceComponent,
+    TopnavComponent
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@ import { JwtClientService } from './jwt-client.service';
 import { VoiceComponent } from './voice/voice.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatedSentenceComponent } from './translated-sentence/translated-sentence.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TopnavComponent } from './topnav/topnav.component';
 import { BodyComponent } from './body/body.component';
 import { LoginComponent } from './login/login.component';
@@ -42,7 +42,8 @@ import { RegisterComponent } from './login/register/register.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ AuthGuard, UsersService, SentenceService, JwtClientService,
     {

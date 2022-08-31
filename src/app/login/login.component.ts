@@ -1,5 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl , Validators , FormBuilder}  from '@angular/forms';
+import { FormGroup, FormControl , Validators , FormBuilder, NgForm}  from '@angular/forms';
+import { Router } from '@angular/router';
+import { JwtClientService } from '../jwt-client.service';
 
 
 @Component({
@@ -12,7 +15,7 @@ export class LoginComponent implements OnInit {
   reactiveForm: FormGroup;
   submitted: boolean = false;
 
-  constructor(private FormBuilder:FormBuilder) {
+  constructor(private FormBuilder:FormBuilder, private jwtclient: JwtClientService, private router: Router) {
     this.reactiveForm = this.FormBuilder.group({
       username : new FormControl (null , [Validators.required])
     })
@@ -25,6 +28,23 @@ export class LoginComponent implements OnInit {
     if(this.reactiveForm.invalid){
       return;
     }
+   }
+
+   /**
+    * login
+    */
+   public login(loginForm: NgForm) {
+    localStorage.clear();
+    this.jwtclient.generateToken(loginForm.value).subscribe(
+      (response: string) => {
+        console.log(response);
+        localStorage.setItem("token", response);
+        this.router.navigate(["/sentence"]);
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
    }
 
 

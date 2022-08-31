@@ -18,4 +18,11 @@ export class UsersService {
      public getAllUsers(): Observable<Users[]> {
       return this.http.get<Users[]>(`${this.apiServerUrl}/fetch/users`);
     }
+
+    /**
+     * createUser
+ : Observable<Users>    */
+    public createUser(user: Users): Observable<Users> {
+      return this.http.post<Users>(`${this.apiServerUrl}/create/user`, user);
+    }
 }

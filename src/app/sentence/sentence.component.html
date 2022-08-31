@@ -114,7 +114,7 @@
                                   </div>
                                 </ng-template>
                                 <button class="btn btn-sm btn-outline-primary" (click)="open(content)">Translate sentence</button>
-                                <p class="text-muted">Written by <a href="javascript:void(0)">{{sentence.written_by}}</a> on <span class="text-secondary font-weight-bold">{{sentence.date_modified}}</span></p>
+                                <p class="text-muted">Written by <a href="javascript:void(0)">{{sentence.written_by}}</a> on <span class="text-secondary font-weight-bold">{{sentence.date_modified | date:'medium' }}</span></p>
                             </div>
                         </div>
                     </div>

@@ -26,7 +26,7 @@ export class SecurityComponent implements OnInit {
   }
 
   public getAccessToken(authRequest: any) {
-
+    localStorage.clear();
     this.jwtclient.generateToken(authRequest).subscribe(
       (response: string) => {
         console.log(response);

@@ -17,6 +17,10 @@ import { VoiceComponent } from './voice/voice.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslatedSentenceComponent } from './translated-sentence/translated-sentence.component';
 import { FormsModule } from '@angular/forms';
+import { TopnavComponent } from './topnav/topnav.component';
+import { BodyComponent } from './body/body.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './login/register/register.component';
 
 
 @NgModule({
@@ -26,7 +30,11 @@ import { FormsModule } from '@angular/forms';
     SecurityComponent,
     UsersComponent,
     VoiceComponent,
-    TranslatedSentenceComponent
+    TranslatedSentenceComponent,
+    TopnavComponent,
+    BodyComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

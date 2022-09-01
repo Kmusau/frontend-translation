@@ -1,8 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { JwtClientService } from '../jwt-client.service';
-import { Sentence } from '../sentence';
+import { JwtClientService } from '../services/jwt-client.service';
+import { Sentence } from '../models/sentence';
 
 @Component({
   selector: 'app-security',

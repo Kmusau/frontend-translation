@@ -2,8 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Sentence } from '../sentence';
-import { SentenceService } from '../sentence.service';
+import { Sentence } from '../models/sentence';
+import { SentenceService } from '../services/sentence.service';
 
 @Component({
   selector: 'app-sentence',

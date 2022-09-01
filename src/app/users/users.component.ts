@@ -1,9 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Sentence } from '../sentence';
-import { SentenceService } from '../sentence.service';
-import { Users } from '../users';
-import { UsersService } from '../users.service';
+import { Sentence } from '../models/sentence';
+import { SentenceService } from '../services/sentence.service';
+import { Users } from '../models/users';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-users',

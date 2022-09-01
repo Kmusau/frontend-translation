@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as RecordRTC from 'recordrtc';
 import { DomSanitizer } from '@angular/platform-browser';
-import { AudioService } from '../audio.service';
-import { Audio } from '../audio';
+import { AudioService } from '../services/audio.service';
+import { Audio } from '../models/audio';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({

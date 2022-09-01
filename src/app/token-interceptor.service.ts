@@ -1,7 +1,7 @@
 import { HttpErrorResponse, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
-import { JwtClientService } from './jwt-client.service';
+import { JwtClientService } from './services/jwt-client.service';
 
 @Injectable({
   providedIn: 'root'

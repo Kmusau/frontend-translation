@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Sentence } from './sentence';
-import { TranslatedSentence } from './translated-sentence';
+import { Sentence } from '../models/sentence';
+import { TranslatedSentence } from '../models/translated-sentence';
 
 @Injectable({
   providedIn: 'root'

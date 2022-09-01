@@ -11,9 +11,9 @@
                         <line x1="12" y1="5" x2="12" y2="19"></line>
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                     </svg>
-                    
+
                 </button>
-                
+
             </div>
             <!-- /Inner sidebar header -->
 
@@ -70,19 +70,19 @@
 
             <!-- Forum List -->
             <div class="inner-main-body p-2 p-sm-3 collapse forum-content show">
-                <div class="row">
-                    <div class="col-9">
-                        <div *ngFor="let translated of translatedSentences" class="card mb-2">
+                <div *ngFor="let translated of translatedSentences" class="row">
+                    <div class="col-lg-9 col-md-6 col-sm-8">
+                        <div class="card mb-2">
                             <div class="card-body p-2 p-sm-3">
                                 <div class="media forum-item">
                                   <h6 class="text-body">{{translated.sentence.sentence_text}}</h6>
                                   <h5>{{translated.language}}</h5>
                                     <div class="media-body">
-        
+
                                         <p class="text-body">
                                             {{translated.translated_text}}
                                         </p>
-                                        <p class="text-muted">Translated by <a href="javascript:void(0)">{{translated.translated_by}}</a> on <span class="text-secondary font-weight-bold">{{translated.date_modified | date:'medium' }}</span></p>
+                                        <p class="text-muted">Translated {{translated.translated_sentence_id}} by <a href="javascript:void(0)">{{translated.translated_by}}</a> on <span class="text-secondary font-weight-bold">{{translated.date_modified | date:'medium' }}</span></p>
                                     </div>
                                     <!-- <div class="text-muted small text-center align-self-center">
                                         <span class="d-none d-sm-inline-block"><i class="far fa-eye"></i> 19</span>
@@ -93,11 +93,11 @@
                         </div>
 
                     </div>
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
                         <app-voice></app-voice>
                     </div>
                 </div>
-                
+
 
                 <ul class="pagination pagination-sm pagination-circle justify-content-center mb-0">
                     <li class="page-item disabled">

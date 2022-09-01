@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { BodyComponent } from './body/body.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
 import { SecurityComponent } from './security/security.component';
@@ -10,6 +11,7 @@ import { UsersComponent } from './users/users.component';
 import { VoiceComponent } from './voice/voice.component';
 
 const routes: Routes = [
+  {path: "", component: BodyComponent},
   {path: "authenticate", component: SecurityComponent},
   {path: "users", component: UsersComponent},
   {path: "audio", component: VoiceComponent},

@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { TranslatedSentence } from '../translated-sentence';
-import { TranslatedSentenceService } from '../translated-sentence.service';
+import { TranslatedSentence } from '../models/translated-sentence';
+import { TranslatedSentenceService } from '../services/translated-sentence.service';
 
 @Component({
   selector: 'app-translated-sentence',
@@ -30,7 +30,7 @@ export class TranslatedSentenceComponent implements OnInit {
         alert(error.message);
       }
     );
-    
+
   }
 
 }

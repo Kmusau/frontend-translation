@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl , Validators , FormBuilder, NgForm}  from '@angular/forms';
 import { Router } from '@angular/router';
-import { JwtClientService } from '../jwt-client.service';
+import { JwtClientService } from '../services/jwt-client.service';
 
 
 @Component({

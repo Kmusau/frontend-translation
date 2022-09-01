@@ -2,8 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Users } from 'src/app/users';
-import { UsersService } from 'src/app/users.service';
+import { Users } from 'src/app/models/users';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-register',

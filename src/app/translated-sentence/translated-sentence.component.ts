@@ -30,6 +30,7 @@ export class TranslatedSentenceComponent implements OnInit {
         alert(error.message);
       }
     );
+    
   }
 
 }

@@ -6,7 +6,9 @@
     margin: 0px;
     font-family: 'segoe ui';
   }
-  
+  .button-home{
+    text-decoration: none;
+  }
   .nav {
     height: 50px;
     width: 100%;

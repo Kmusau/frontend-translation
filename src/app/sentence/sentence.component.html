@@ -5,16 +5,45 @@
         <!-- Inner sidebar -->
         <div class="inner-sidebar">
             <!-- Inner sidebar header -->
-            <div class="inner-sidebar-header justify-content-center">
+            <!-- <div class="inner-sidebar-header justify-content-center">
                 <button class="btn btn-primary has-icon btn-block" type="button" data-toggle="modal" data-target="#threadModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus mr-2">
                         <line x1="12" y1="5" x2="12" y2="19"></line>
                         <line x1="5" y1="12" x2="19" y2="12"></line>
-                    </svg>
+                    </svg> -->
                     <!-- starts here -->
+                    <!-- NEW SENTENCE -->
 
-                </button>
-            </div>
+
+                <!-- </button> -->
+                <!-- TODAY -->
+                <ng-template #content let-c="close" let-d="dismiss">
+                    
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="modal-basic-title">Choose File</h4>
+                      <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- form here -->
+                      <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Please choose the file you would like to upload</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                      </div>
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                    </div>
+                  </ng-template>
+                  
+                  <button class="btn btn-lg btn-outline-primary" (click)="openSm(content)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus mr-2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    New Sentence
+                  </button>
+            <!-- </div> -->
             <!-- /Inner sidebar header -->
 
             <!-- Inner sidebar body -->

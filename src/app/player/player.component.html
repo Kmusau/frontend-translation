@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="text-center mb-5">
+    <h3>Voice recordings</h3>
+    <p class="lead">Translated sentences with their recorded prounciation</p>
+  </div>
+  <div *ngFor="let file of files | paginate: { itemsPerPage: size, currentPage: page, totalItems: total }" class="card mb-3">
+    <div class="card-body">
+      <div class="d-flex flex-column flex-lg-row">
+        <span class="avatar avatar-text rounded-3 me-4 mb-2" (click)="playSound(file.id)">FD</span>
+        <div class="row flex-fill">
+          <div class="col-sm-5">
+            <h4 class="h5">{{file.translated_sentence.translated_text}}</h4>
+            <span class="badge bg-secondary">{{file.status}}</span> <span class="badge bg-success">{{file.audio_by}}</span>
+          </div>
+          <div class="col-sm-4 py-2">
+            <p>{{file.translated_sentence.sentence.sentence_text}}</p>
+          </div>
+          <div class="col-sm-3 text-lg-end">
+            <!-- <span class="btn btn-primary stretched-link" (click)="playAudio(file.id)">Listen</span> -->
+            <button class="btn btn-primary" (click)="playAudio(file.id)">Listen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+</div>

@@ -13,9 +13,14 @@ export class SentenceService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllSentences(): Observable<Sentence[]> {
-    return this.http.get<Sentence[]>(`${this.apiServerUrl}/fetch/sentence`);
+  public getAllSentences(page: number, size: number): Observable<Sentence[]> {
+    return this.http.get<Sentence[]>(`${this.apiServerUrl}/fetch/sentence?pageNo=${page-1}&size=${size}`);
   }
+
+  public getTotalSentences(): Observable<Sentence[]> {
+    return this.http.get<Sentence[]>(`${this.apiServerUrl}/all/sentence`);
+  }
+
   public translateSentence(translated_sentence_id: number, translatedSentence: TranslatedSentence): Observable<TranslatedSentence> {
     return this.http.post<TranslatedSentence>(`${this.apiServerUrl}/translate/sentence/${translated_sentence_id}`, translatedSentence)
   }

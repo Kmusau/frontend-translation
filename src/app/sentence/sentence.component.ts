@@ -15,6 +15,9 @@ export class SentenceComponent implements OnInit {
   closeResult = '';
 
   public sentences: Sentence[] = [];
+  page: number = 1;
+  total: number = 0;
+  size: number = 10;
 
   constructor(private sentenceService: SentenceService, private modalService: NgbModal) { }
 
@@ -26,7 +29,7 @@ export class SentenceComponent implements OnInit {
    * getAllSentences
    */
   public getAllSentences() {
-    this.sentenceService.getAllSentences().subscribe(
+    this.sentenceService.getAllSentences(this.page, this.size).subscribe(
       (response: Sentence[]) => {
         this.sentences = response;
         console.log(response);
@@ -35,6 +38,24 @@ export class SentenceComponent implements OnInit {
         alert(error.message);
       }
     );
+  }
+
+  /**
+   * getTotalSentences
+   */
+  public getTotalSentences() {
+    this.sentenceService.getTotalSentences().subscribe(
+      (response) => {
+        this.total = response.length;
+        console.log(this.total);
+      }
+    );
+  }
+
+  pageChangeEvent(event: number) {
+    this.page = event;
+
+    this.getAllSentences();
   }
 
   /**

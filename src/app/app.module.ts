@@ -21,6 +21,8 @@ import { TopnavComponent } from './topnav/topnav.component';
 import { BodyComponent } from './body/body.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register/register.component';
+import { PlayerComponent } from './player/player.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { RegisterComponent } from './login/register/register.component';
     TopnavComponent,
     BodyComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { RegisterComponent } from './login/register/register.component';
     BrowserAnimationsModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [ AuthGuard, UsersService, SentenceService, JwtClientService,
     {

@@ -19,8 +19,6 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     this.getAllUsers();
-    this.getAllSentences();
-
   }
 
   /**
@@ -38,16 +36,16 @@ export class UsersComponent implements OnInit {
     );
   }
 
-  public getAllSentences() {
-    this.sentenceService.getAllSentences().subscribe(
-      (response: Sentence[]) => {
-        this.sentences = response;
-        console.log(response);
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
+  // public getAllSentences() {
+  //   this.sentenceService.getAllSentences().subscribe(
+  //     (response: Sentence[]) => {
+  //       this.sentences = response;
+  //       console.log(response);
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //     }
+  //   );
+  // }
 
 }

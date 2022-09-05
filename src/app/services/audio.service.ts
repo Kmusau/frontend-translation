@@ -24,10 +24,11 @@ export class AudioService {
     return this.http.post<Audio>(`${this.apiServerUrl}/record/voice`, audio);
   }
 
-  public sendAudioFile = (file: string | Blob) => {
+  public sendAudioFile = (file: string | Blob, id: number) => {
     const formData = new FormData();
     formData.append('file', file);
-    return fetch(`${this.apiServerUrl}/upload`, {
+    // formData.append('id', id)
+    return fetch(`${this.apiServerUrl}/upload/${id}`, {
       method: 'POST',
       body: formData,
       headers: {'Authorization': "Bearer "+ localStorage.getItem('token')}

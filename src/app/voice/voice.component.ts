@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as RecordRTC from 'recordrtc';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AudioService } from '../services/audio.service';
@@ -11,6 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./voice.component.css']
 })
 export class VoiceComponent implements OnInit {
+  @Input() id: any;
 
   title = 'wav-voice';
 
@@ -20,6 +21,7 @@ export class VoiceComponent implements OnInit {
   public recording = false;
   //Url of Blob
   public url: any;
+  public url1: any;
   public error: any;
 
   public audios: Audio[] = [];
@@ -30,7 +32,7 @@ export class VoiceComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getAudios();
+    // this.getAudios();
   }
 
   public getAudios(): void {
@@ -44,20 +46,6 @@ export class VoiceComponent implements OnInit {
     );
   }
 
-  // public onAddStudent(addForm: NgForm): void {
-  //   document.getElementById("close-button").click();
-  //   this.audioService.recordAudio().subscribe(
-  //     (response: Audio) => {
-  //       console.log(response)
-  //       this.getAudios();
-  //       addForm.reset();
-  //     },
-  //     (error: HttpErrorResponse) => {
-  //       alert(error.message);
-  //       addForm.reset();
-  //     }
-  //   );
-  // }
 
   sanitize(url: string) {
     return this.domSanitizer.bypassSecurityTrustUrl(url);
@@ -101,21 +89,10 @@ export class VoiceComponent implements OnInit {
    */
   processRecording(blob: any) {
     this.url = URL.createObjectURL(blob);
-    //  this.url = `blob:http://localhost:4200/18ba0fde-59f4-4026-ae9b-133a3cbef104`;
     console.log(blob);
     console.log(this.url);
 
-    this.audioService.sendAudioFile(blob);
-
-    // this.audioService.recordAudio(fd).subscribe(
-    //   (response: Audio) => {
-    //     console.log(response);
-    //     this.getAudios();
-    //   },
-    //   (error: HttpErrorResponse) => {
-    //     alert(error.message);
-    //   }
-    // );
+    this.audioService.sendAudioFile(blob, this.id);
   }
   /**
    * Process Error.
